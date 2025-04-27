@@ -11,20 +11,21 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
+  <div class="cursor"></div>
+    <div class="cursor-follower"></div>
     <div class="ds-bg">
         <!-- Background Gradient -->
         <div class="bg-gradient"></div>
         <!-- Grid Overlay -->
         <div class="grid-overlay"></div>
-    </div>   
-     
+    </div>        
     <header class="header">
         <nav class="nav container">
             <div class="nav__left">
                 <span class="nav__logo">KR</span>
             </div>
             <div class="nav__right">
-                <a href="#home" class="nav__link active">Bio</a>
+                <a href="#home" class="nav__link active">About</a>
                 <a href="#education" class="nav__link">Education</a>
                 <a href="#leadership" class="nav__link">Leadership & Achievements</a>
                 <a href="#projects" class="nav__link">Projects</a>
@@ -41,23 +42,23 @@
                 <div class="hero__text">
                     <h1 class="hero__greeting">Hi! I'm</h1>
                     <h2 class="hero__name">Rania Kherba</h2>
-                    <h3 class="hero__title" id="typewriter-text">Data Science Enthusiast</h3>                     
+                    <h3 class="hero__title" id="typewriter-text"><strong>Data Science Enthusiast</strong></h3>                   
                     <div class="hero__description">
                         <div class="hero__description" style="max-width: 800px; margin: 0 auto;">
                             <div style="text-align: left; line-height: 1.8;">
                               <p style="margin-bottom: 1rem;">
-                                <strong>Data Science student</strong> with strong skills in
+                                <strong>Data Science student with strong skills in</strong> 
                                 <span class="highlight-keyword">Python ,</span>
                                 <span class="highlight-keyword">SQL ,</span>
                                 <span class="highlight-keyword">Machine Learning ,</span>
                                 <span class="highlight-keyword">Data Engineering .</span>
-                                <strong>Experienced</strong> in
+                                <strong>Experienced in</strong>
                                 <span class="highlight-keyword">Data Analysis ,</span> 
                                 <span class="highlight-keyword">Data Preprocessing ,</span> 
                                 <span class="highlight-keyword">Predictive Modeling ,</span> 
                                 <span class="highlight-keyword">Data Visualization.</span>
-                                Focused on delivering <span class="highlight-keyword">Data-Driven Solutions</span>
-                                to real-world problems
+                                <strong>Focused on delivering</strong><span class="highlight-keyword">Data-Driven Solutions</span>
+                                <strong>to real-world problems</strong>
                               </p>
                             </div>
                           </div>
@@ -68,14 +69,71 @@
                         <a href="https://drive.google.com/file/d/1tcA5yRjLWj3j3E9lyboCJSobhmoFLojd/view?usp=sharing" class="button button--primary">View CV</a></p>
                     </div>
                 </div>
-                
                 <div class="hero__image-container">
-                    <div class="image-frame">
-                      <img src="me.png" alt="Rania Kherba" class="profile-image">
-                    </div>
+                  <div class="image-frame">
+                    <img src="me.png" alt="Rania Kherba" class="profile-image">
                   </div>
+                </div>
             </div>
         </section>
+         <section class="section" id="what-i-do">
+          <div class="section-header">
+            <h2>What I Do</h2>
+            <p>My professional expertise and service offerings</p>
+           </div>
+           <div class="services-grid">
+            <!-- ML & AI Development -->
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <h3>ML & AI Development</h3>
+                <ul>
+                  <li>Develop, train, and optimize machine learning models</li>
+                  <li>Build and deploy AI systems for real-world applications</li>
+                  <li>Analyze performance with hyperparameter tuning</li>
+                </ul>
+              </div>
+              <!-- Data Science & Analytics -->
+               <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Data Science & Analytics</h3>
+                <ul>
+                   <li>Collect and analyze complex datasets for insights</li>
+                   <li>Build data visualization dashboards</li>
+                   <li>Apply statistical models for decision support</li>
+                  </ul>
+                </div>
+                 <!-- IT Project Management -->
+                 <div class="service-card">
+                   <div class="service-icon">
+                     <i class="fas fa-tasks"></i>
+                    </div>
+                     <h3>IT Project Management</h3>
+                      <ul>
+                         <li>Manage IT projects from initiation to deployment</li>
+                          <li>Collaborate with cross-functional teams</li>
+                           <li>Monitor risks and communicate progress</li>
+                           </ul>
+                 </div>
+                    
+                    <!-- Web Development -->
+                   <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <ul>
+                            <li>Develop responsive websites and applications</li>
+                            <li>Integrate APIs and databases</li>
+                            <li>Optimize performance and SEO</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+       
 
         <section id="projects" class="section">
             <div class="section__header">
@@ -133,7 +191,7 @@
               <article class="project-card">
                 <div class="project-card__image-wrapper">
                   <lottie-player 
-                    src="BCI.json" 
+                    src="cnn.json" 
                     background="transparent" 
                     speed="1" 
                     style="width: 100%; height: 300px;" 
@@ -141,12 +199,12 @@
                     autoplay>
                   </lottie-player>
                 </div>
-                <h3>Awesome Web App</h3>
-                <p class="project-card__description">A sleek web app for managing tasks efficiently.</p>
+                <h3>Brain Signal Classification using Convolutional Neural Networks</h3>
+                <p class="project-card__description">Designed and trained a CNN model to classify motor imagery tasks based on EEG signals.</p>
                 <div class="project-card__tags">
-                  <span class="project-card__tag">HTML</span>
-                  <span class="project-card__tag">CSS</span>
-                  <span class="project-card__tag">JavaScript</span>
+                  <span class="project-card__tag highlight">EEG Signal Processing</span>
+                  <span class="project-card__tag special">Keras</span>
+                  <span class="project-card__tag special">Callbacks</span>
                 </div>
               </article>
           
@@ -236,6 +294,26 @@
                   <span class="project-card__tag highlight">Statistical Analysis</span>
                 </div>
               </article>
+              <article class="project-card">
+                <div class="project-card__image-wrapper">
+                  <lottie-player 
+                    src="dbn.json" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 100%; height: 300px;" 
+                    loop 
+                    autoplay>
+                  </lottie-player>
+                </div>
+                <h3>Feature Extraction from EEG Signals using Deep Belief Networks</h3>
+                <p class="project-card__description">Developed a DBN model to perform feature extraction and mental state classification from brain signals.</p>
+                <div class="project-card__tags">
+                  <span class="project-card__tag highlight">Deep Belief Networks (DBN)</span>
+                  <span class="project-card__tag special">Temporal Pattern Recognition</span>
+                  <span class="project-card__tag">Restricted Boltzmann Machine (RBM)</span>
+                  <span class="project-card__tag">Unsupervised Learning</span>
+                </div>
+              </article>
           
               <article class="project-card">
                 <div class="project-card__image-wrapper">
@@ -274,6 +352,27 @@
                   <span class="project-card__tag highlight">Django</span>
                   <span class="project-card__tag">Web Development</span>
                   <span class="project-card__tag special">HTML, css</span>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card__image-wrapper">
+                  <lottie-player 
+                    src="BCI.json" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 100%; height: 300px;" 
+                    loop 
+                    autoplay>
+                  </lottie-player>
+                </div>
+                <h3>Sequential Brain Signal Analysis using Recurrent Neural Networks</h3>
+                <p class="project-card__description">Built a SimpleRNN model to recognize temporal dependencies in EEG sequences for continuous mental state monitoring</p>
+                <div class="project-card__tags">
+                  <span class="project-card__tag highlight">SimpleRNN</span>
+                  <span class="project-card__tag special">Temporal Pattern Recognition</span>
+                  <span class="project-card__tag">Sequential Data Processing</span>
+                  <span class="project-card__tag">EEG Temporal Pattern Recognition</span>
+                  <span class="project-card__tag">Categorical Crossentropy</span>
                 </div>
               </article>
           
@@ -319,6 +418,20 @@
                   <span class="project-card__tag">Data Struture And Algorithms</span>
                 </div>
               </article>
+              <article class="project-card">
+                <div class="project-card__image-wrapper">
+                  <img src="vae.png" alt="VAE Project" style="width: 100%; height: 300px; object-fit: cover;">
+
+                </div>
+                <h3>Synthetic EEG Data Generation using Variational Autoencoders</h3>
+                <p class="project-card__description">Designed a VAE model to learn a latent representation of EEG signals and generate realistic synthetic brain signals</p>
+                <div class="project-card__tags">
+                  <span class="project-card__tag highlight">VAE</span>
+                  <span class="project-card__tag special">Latent Space Learning</span>
+                  <span class="project-card__tag">Signal Reconstruction</span>
+                  <span class="project-card__tag">Encoder-Decoder Networks</span>
+                </div>
+              </article>
           
               <article class="project-card">
                 <div class="project-card__image-wrapper">
@@ -360,7 +473,8 @@
                   <span class="project-card__tag highlight">BERT</span>
                   <span class="project-card__tag highlight">Sentiment Analysis</span>
                 </div>
-              </article>
+              </article>            
+              
             </div>
           </section>
 
@@ -409,17 +523,33 @@
     
     <div class="timeline horizontal">
       <!-- Hult Prize Coordinator -->
+      <!-- Hult Prize Finalist -->
       <div class="timeline-item">
         <div class="timeline-dot primary"></div>
         <div class="timeline-content">
-          <div class="timeline-date">2023</div>
-          <h3>Hult Prize Training Coordinator</h3>
+          <div class="timeline-date">2024</div>
+          <h3>Hult Prize Finalist</h3>
           <ul class="timeline-details">
-            <li>Organized and facilitated training sessions for participants, focusing on idea development
-                and pitching skills</li>
+            <li>OnCampus Competition Finalist</li>
+            <li>FireSide Program Participant</li>
+            <li>Developed social enterprise prototype</li>
           </ul>
         </div>
       </div>
+
+    <!-- Hult Prize Finalist -->
+    <div class="timeline-item">
+      <div class="timeline-dot primary"></div>
+      <div class="timeline-content">
+        <div class="timeline-date">2024</div>
+        <h3>Hult Prize Finalist</h3>
+        <ul class="timeline-details">
+          <li>OnCampus Competition Finalist</li>
+          <li>FireSide Program Participant</li>
+          <li>Developed social enterprise prototype</li>
+        </ul>
+      </div>
+    </div>    
   
       <!-- African Student Association -->
       <div class="timeline-item">
@@ -458,22 +588,20 @@
       </ul>
     </div>
   </div>
-  
-      <!-- Hult Prize Finalist -->
-      <div class="timeline-item">
-        <div class="timeline-dot primary"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">2024</div>
-          <h3>Hult Prize Finalist</h3>
-          <ul class="timeline-details">
-            <li>OnCampus Competition Finalist</li>
-            <li>FireSide Program Participant</li>
-            <li>Developed social enterprise prototype</li>
-          </ul>
-        </div>
-      </div>
+  <div class="timeline-item">
+    <div class="timeline-dot primary"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2023</div>
+      <h3>Hult Prize Training Coordinator</h3>
+      <ul class="timeline-details">
+        <li>Organized and facilitated training sessions for participants, focusing on idea development
+            and pitching skills</li>
+      </ul>
+    </div>
     </div>
   </section>
+ 
+
   <section id="Certificates & Awards" class="section">
     <div class="section__header">
       <h2>Certifications & Awards</h2>
@@ -488,7 +616,7 @@
           </div>
           <div class="bubble-title">AWS Machine Learning</div>
           <div class="bubble-issuer">AWS</div>
-          <a href="#" class="bubble-link">View</a>
+          <a href="https://drive.google.com/file/d/1o601gwaphzMd9_kPLcXliaNDmPlPq3jc/view?usp=sharing" class="bubble-link">View</a>
         </div>
       </div>
   
@@ -499,7 +627,7 @@
           </div>
           <div class="bubble-title">OnCampus Finalist</div>
           <div class="bubble-issuer">Hult Prize</div>
-          <a href="#" class="bubble-link">View</a>
+          <a href="https://drive.google.com/file/d/1w4jYw0U5wS7Afi8tKAUcoNE3l5v4Dx_C/view?usp=sharing" class="bubble-link">View</a>
         </div>
       </div>
   
@@ -510,7 +638,7 @@
           </div>
           <div class="bubble-title">Data Analysis with R Programming</div>
           <div class="bubble-issuer">Google</div>
-          <a href="#" class="bubble-link">View</a>
+          <a href="https://drive.google.com/file/d/1-ENrKHTyDXHO0UUe1B0SZyyXSkWjp64C/view?usp=sharing" class="bubble-link">View</a>
         </div>
       </div>
   
@@ -522,7 +650,7 @@
           </div>
           <div class="bubble-title">CENTRE OF REFERENCE Volunteer</div>
           <div class="bubble-issuer">CENTRE OF REFERENCE</div>
-          <a href="#" class="bubble-link">View</a>
+          <a href="https://drive.google.com/file/d/1oW7KW73IaWYJe5z0NfqPwqrn3ZX9odxO/view?usp=sharing" class="bubble-link">View</a>
         </div>
       </div>
   
@@ -533,7 +661,7 @@
           </div>
           <div class="bubble-title">Afsa Auditor</div>
           <div class="bubble-issuer">AFSA AIU</div>
-          <a href="#" class="bubble-link">View</a>
+          <a href="https://drive.google.com/file/d/128cTbGzzLUA25ne3DVg_mQt19ary4dQf/view?usp=sharing" class="bubble-link">View</a>
         </div>
       </div>
   
@@ -544,51 +672,171 @@
           </div>
           <div class="bubble-title">Participant</div>
           <div class="bubble-issuer">Hult Prize UKSW</div>
-          <a href="#" class="bubble-link">View</a>
+          <a href="https://drive.google.com/file/d/1xaSfC_4M-vUTyj5jtSTFHkvjkihMHGd3/view?usp=sharing" class="bubble-link">View</a>
         </div>
       </div>
-    </div>
-  </section>
+      
+      <!-- Row 3 -->
+      <div class="bubble-wrapper">
+        <div class="cert-bubble">
+          <div class="bubble-logo">
+            <img src="dl.jpg" alt="Dean's List Award" width="36">
+          </div>
+          <div class="bubble-title">Dean's List Award Sem 2 Year 1</div>
+          <div class="bubble-issuer">SCI</div>
+          <a href="https://drive.google.com/file/d/1kFdeqNgXl_aRrItgu052wEGJveV8sO6S/view?usp=sharing" class="bubble-link">View</a>
+        </div>
+      </div>
+      
+      <div class="bubble-wrapper">
+        <div class="cert-bubble">
+          <div class="bubble-logo">
+            <img src="dl.jpg" alt="Dean's List Award" width="36">
+          </div>
+          <div class="bubble-title">Dean's List Award Sem 3 Year 1 </div>
+          <div class="bubble-issuer">SCI</div>
+          <a href="https://drive.google.com/file/d/1M-zjUJ5KcPmOMSZ6fT7yD0IZ5hL3AyDb/view?usp=sharing" class="bubble-link">View</a>
+        </div>
+      </div>
+      
+      <div class="bubble-wrapper">
+        <div class="cert-bubble">
+          <div class="bubble-logo">
+            <img src="dl.jpg" alt="Dean's List Award Sem 3" width="36">
+          </div>
+          <div class="bubble-title">Dean's List Award Sem 1 Year 1</div>
+          <div class="bubble-issuer">SCI</div>
+          <a href="https://drive.google.com/file/d/1Cjt-iXCsAmLBNdnZCmkOuR8RixjDUuap/view?usp=sharing" class="bubble-link">View</a>
+        </div>
+      </div>
+
+            <!-- Row 4 -->
+            <div class="bubble-wrapper">
+              <div class="cert-bubble">
+                <div class="bubble-logo">
+                  <img src="dl.jpg" alt="Dean's List Award" width="36">
+                </div>
+                <div class="bubble-title">Dean's List Award Sem 1 Year 2</div>
+                <div class="bubble-issuer">SCI</div>
+                <a href="https://drive.google.com/file/d/1Cjt-iXCsAmLBNdnZCmkOuR8RixjDUuap/view?usp=sharing" class="bubble-link">View</a>
+              </div>
+            </div>
+            
+            <div class="bubble-wrapper">
+              <div class="cert-bubble">
+                <div class="bubble-logo">
+                  <img src="dl.jpg" alt="Dean's List Award" width="36">
+                </div>
+                <div class="bubble-title">Dean's List Award Sem 2 Year 2 </div>
+                <div class="bubble-issuer">SCI</div>
+                <a href="https://drive.google.com/file/d/10Jx9KI6YSE9Rqk-vPOYE7qkhK6v40cz6/view?usp=sharing" class="bubble-link">View</a>
+              </div>
+            </div>
+            
+            <div class="bubble-wrapper">
+              <div class="cert-bubble">
+                <div class="bubble-logo">
+                  <img src="dl.jpg" alt="Dean's List Award" width="36">
+                </div>
+                <div class="bubble-title">Dean's List Award Sem 3 Year 2</div>
+                <div class="bubble-issuer">SCI</div>
+                <a href="https://drive.google.com/file/d/1x1V9y263Hz4r0Q-yqXE9Z7WJqxxsekKq/view?usp=sharing" class="bubble-link">View</a>
+              </div>
+            </div>
+             <!-- Row 5 -->
+             <div class="bubble-wrapper">
+              <div class="cert-bubble">
+                <div class="bubble-logo">
+                  <img src="dl.jpg" alt="Best IT-Based Solution" width="36">
+                </div>
+                <div class="bubble-title">First Runner-up, Best IT-Based Solution for Social Development</div>
+                <div class="bubble-issuer">SCI</div>
+                <a href="https://drive.google.com/file/d/1Cjt-iXCsAmLBNdnZCmkOuR8RixjDUuap/view?usp=sharing" class="bubble-link">View</a>
+              </div>
+            </div>
+            
+            <div class="bubble-wrapper">
+              <div class="cert-bubble">
+                <div class="bubble-logo">
+                  <img src="cs50.png" alt="CS50" width="36">
+                </div>
+                <div class="bubble-title">CS50 Introduction to Programming with Python</div>
+                <div class="bubble-issuer">Harvard University</div>
+                <a href="https://drive.google.com/file/d/10Jx9KI6YSE9Rqk-vPOYE7qkhK6v40cz22/view?" class="bubble-link">View</a>
+              </div>
+            </div>
+    
+    </div> <!-- Closing the bubbles-grid div -->
+</section>
           
              
-
-    <section id="contact" class="section">
-        <div class="section__header">
-            <h2>CONTACT ME </h2>
-    <p class="contact-subtitle">Get In Touch</p>
+<section id="contact" class="section contact-section">
+  <div class="section__header">
+      <h2>CONTACT ME</h2>
+      <p class="contact-subtitle">Let's collaborate on something great</p>
   </div>
 
-  <div class="contact-content" style="text-align: center;">
-    <div class="contact-info">
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:ran.work.kh@gmail.com">ran.work.kh@gmail.com</a>
+  <div class="contact-container">
+      <!-- Contact Information - Linear Layout -->
+      <div class="contact-info-linear">
+          <div class="contact-line">
+              <i class="fas fa-envelope contact-icon"></i>
+              <div class="contact-details">
+                  <h3>Email</h3>
+                  <a href="mailto:ran.work.kh@gmail.com" class="contact-link">ran.work.kh@gmail.com</a>
+              </div>
+          </div>
+
+          <div class="contact-line">
+              <i class="fas fa-phone-alt contact-icon"></i>
+              <div class="contact-details">
+                  <h3>Phone</h3>
+                  <a href="tel:+601139056643" class="contact-link">+60 11-3905 6643</a>
+              </div>
+          </div>
+
+          <div class="contact-line">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <div class="contact-details">
+                  <h3>Location</h3>
+                  <span>Jalan Tun Razak, Bandar Alor Setar,<br>05200 Alor Setar, Kedah, Malaysia</span>
+              </div>
+          </div>
       </div>
-      <div class="contact-item">
-        <i class="fas fa-phone"></i>
-        <a href="tel:+1234567890">+601139056643</a>
+
+      <!-- Social Media - Minimalist -->
+      <div class="social-section">
+          <h3 class="social-title">Find Me Online</h3>
+          <div class="social-links-minimal">
+              <a href="https://www.linkedin.com/in/rania-kherba-527a06283" class="social-item" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/Rania-k" class="social-item" target="_blank">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+              </a>
+              <a href="https://www.instagram.com/r_a_n_i_a_k?igsh=YXJqOGV5YnJ0N21j" class="social-item" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                  <span>Instagram</span>
+              </a>
+          </div>
       </div>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/rania-kherba-527a06283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link linkedin" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-      <div class="contact-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Jalan Tun Razak, Bandar Alor Setar, 05200 Alor Setar, Kedah, Malaysia</span>
-      </div>
-    </div>
+
   </div>
 </section>
-    </main>
+</main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; <span id="year"></span> Rania Kherba. All rights reserved.</p>
+          <center>
+          <p><span id="year"></span> Rania Kherba. All rights reserved.</p></center>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
 

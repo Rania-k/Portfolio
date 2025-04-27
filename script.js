@@ -14,14 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
         titleElement.innerHTML = `
             <span class="typewriter">
                 <span class="typewriter-text"></span>
-                <span class="typewriter-cursor">|</span>
+                <span class="typewriter-cursor" style="opacity: 0">|</span>
             </span>
         `;
         
         const typewriterText = titleElement.querySelector('.typewriter-text');
         const cursor = titleElement.querySelector('.typewriter-cursor');
         let i = 0;
-        const typingSpeed = 100; // typing speed in ms
+        const typingSpeed = 100;
+        const pauseBetweenCycles = 2000; // 2 second pause before restarting
         
         function typeWriter() {
             if (i < originalText.length) {
@@ -35,24 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 i++;
                 setTimeout(typeWriter, typingSpeed);
             } else {
-                // Animation complete - start color cycling
-                cursor.style.animation = 'none'; // Stop blinking when done
-                cycleColors();
+                // Animation complete - wait, then restart
+                setTimeout(() => {
+                    i = 0;
+                    typewriterText.textContent = '';
+                    typeWriter(); // Restart typing
+                }, pauseBetweenCycles);
             }
-        }
-        
-        function cycleColors() {
-            currentColorIndex = (currentColorIndex + 1) % colors.length;
-            typewriterText.style.color = colors[currentColorIndex];
-            setTimeout(cycleColors, 1000);
         }
         
         // Start the animation after a short delay
         setTimeout(typeWriter, 500);
     }
-
+    
     // Call the typing animation function
-    initTypewriter();
+    initTypewriter();;
 
     // ====================
     // Particles.js Background
@@ -108,8 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Rest of your existing code...
-    // (Keep all your other existing functions and event listeners)
+
 });
 
 window.addEventListener('load', function() {
@@ -130,3 +127,145 @@ window.addEventListener('load', function() {
     const scrollPercent = window.scrollY / document.body.scrollHeight;
     bgDots.style.transform = `translateY(${scrollPercent * 20}px)`;
   });
+
+  
+  const cursor = document.querySelector('.cursor');
+  const particles = [];
+  const colors = ['#4e54c8', '#8f94fb', '#ff3366', '#00ff88'];
+  
+  // Create particles
+  for (let i = 0; i < 10; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('cursor-particle');
+    document.body.appendChild(particle);
+    particles.push({
+      element: particle,
+      x: 0,
+      y: 0,
+      delay: i * 0.05,
+      color: colors[i % colors.length]
+    });
+  }
+  
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.clientX - 7}px`;
+    cursor.style.top = `${e.clientY - 7}px`;
+    
+    particles.forEach((particle, i) => {
+      setTimeout(() => {
+        particle.element.style.left = `${e.clientX - 3}px`;
+        particle.element.style.top = `${e.clientY - 3}px`;
+        particle.element.style.opacity = '1';
+        particle.element.style.background = particle.color;
+        
+        // Fade out effect
+        setTimeout(() => {
+          particle.element.style.opacity = '0';
+        }, 300);
+      }, i * 50);
+    });
+  });
+  
+  // Hover effects
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('active');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('active');
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animate cards on scroll
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    const animateCards = () => {
+        serviceCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.animation = `fadeInUp 0.6s forwards ${index * 0.2}s`;
+            }, 50);
+        });
+    };
+
+    // Add animation keyframes dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Intersection Observer for scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCards();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(document.querySelector('#what-i-do'));
+
+    // Add hover class dynamically for better performance
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('hovering');
+        });
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('hovering');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    function checkScroll() {
+      serviceCards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        // When card enters viewport
+        if (cardTop < windowHeight * 0.75) {
+          card.classList.add('animate-in');
+        } else {
+          card.classList.remove('animate-in');
+        }
+      });
+    }
+  
+    // Initial check
+    checkScroll();
+    
+    // Listen to scroll events with debounce
+    let isScrolling;
+    window.addEventListener('scroll', function() {
+      window.clearTimeout(isScrolling);
+      isScrolling = setTimeout(checkScroll, 50);
+    }, { passive: true });
+  });
+
+
+  // Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Create bubbles container
+    const bubblesContainer = document.createElement('div');
+    bubblesContainer.className = 'bubbles-background';
+    document.body.appendChild(bubblesContainer);
+    
+    
+    document.head.appendChild(style);
+    
+}
+
+);

@@ -1,44 +1,14 @@
-/* ==================== */
-/* GUARANTEED VISIBLE BACKGROUND */
-/* ==================== */
-.ds-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    overflow: hidden;
-  }
-  
-  .bg-gradient {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-  }
-  
 
-  /* Grid Overlay */
-  .grid-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-  }
-  
+  /*gba(15, 23, 42, 0.9) /*
   /* Fix White Sections */
   .header,
   .section {
-    background-color: rgba(15, 23, 42, 0.9) !important;
+    background-color:#0f0524;
     backdrop-filter: blur(10px);
   }
   
   .section--alt {
-    background-color: rgba(30, 58, 138, 0.9) !important;
+    background-color: #0f0524;
   }
 
 :root {
@@ -74,14 +44,179 @@ html {
 }
 
 body {
-    font-family: var(--font-base);
-    line-height: 1.6;
-    color: var(--text);
-    background-color: var(--background);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+
+  padding: 0;
+  font-family: var(--font-base);
+  line-height: 1.6;
+  color: var(--text);
+  background-color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none;
 }
 
+
+/* Fix White Sections */
+.header,
+.section {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+.section--alt {
+  background-color: rgba(30, 58, 138, 0.9) !important;
+}
+
+/* ==================== */
+/* SERVICES SECTION */
+/* ==================== */
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #f8fafc;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: #a78bfa;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-header p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgba(167, 139, 250, 0.1);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #a78bfa;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(167, 139, 250, 0.1);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.service-card:hover::before {
+  height: 10px;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #a78bfa;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #f8fafc;
+}
+
+.service-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.service-card li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+  color: #e2e8f0;
+}
+
+.service-card li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #a78bfa;
+}
+
+/* Cursor Styles */
+.cursor {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background: #4e54c8;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+.cursor-particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #8f94fb;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+}
+
+.cursor.active {
+  transform: scale(2);
+  background: #ff3366;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-header h2 {
+      font-size: 2rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .service-card {
+      padding: 25px;
+  }
+}
 
 /* Layout */
 .container {
@@ -262,17 +397,13 @@ body {
     color: var(--text);
 }
 
+/* Fixed Typewriter Animation */
 .typewriter {
-    display: inline-block;
-  }
-  
-  .typewriter-text {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 4s steps(20) 1s infinite alternate;
-  }
-  
+  display: inline-block;
+  position: relative;
+}
+
+
   .text {
     background: linear-gradient(90deg, #06b6d4, #3b82f6, #9333ea);
     -webkit-background-clip: text;
@@ -282,26 +413,6 @@ body {
     animation: gradientShift 10s ease infinite;
   }
   
-  .cursor {
-    display: inline-block;
-    animation: blink 0.7s infinite;
-    color: #78807d;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-  }
-  
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
   
 
 /* Buttons */
@@ -341,6 +452,8 @@ body {
     gap: 1.5rem;
     margin-top: 3rem;
 }
+
+
 
 /* Projects Grid */
 .projects-grid {
@@ -552,7 +665,7 @@ section {
     100% { background-position: 100% 50%; }
   }
   
-  /* Unique animations for each section */
+  /* Unique animations for each section 
   #projects .section__header h2 {
     perspective: 500px;
   }
@@ -573,7 +686,7 @@ section {
       transform: rotateX(0);
       opacity: 1;
     }
-  }
+  }*/
   
   /* Stagger letters for projects */
   #projects .section__header h2 span:nth-child(1) { animation-delay: 0.1s; }
@@ -1057,3 +1170,168 @@ section {
       height: 160px;
     }
   }
+
+/* Contact Section - Minimalist */
+.contact-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Linear Contact Info */
+.contact-info-linear {
+  margin-bottom: 40px;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-icon {
+  font-size: 20px;
+  color: #4e54c8;
+  min-width: 40px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.contact-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+}
+
+.contact-link, .contact-line span {
+  color: #fffafa;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 15px;
+}
+
+.contact-link:hover {
+  color: #4e54c8;
+}
+
+/* Social Links - Minimal */
+.social-section {
+  margin: 40px 0;
+}
+
+.social-title {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.social-links-minimal {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  color: #f8f7f7;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.social-item i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.social-item:hover {
+  color: #4e54c8;
+  transform: translateY(-2px);
+}
+
+/* Animation Keyframes */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* Side Entrance Animations */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations to cards */
+.service-card {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Alternate left/right animation */
+.service-card:nth-child(odd) {
+  animation-name: slideInFromLeft;
+}
+.service-card:nth-child(even) {
+  animation-name: slideInFromRight;
+}
+
+
+/* Staggered delays */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Animation Classes */
+.service-card {
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Visible state */
+.service-card.animate-in {
+  opacity: 1;
+  transform: translateX(0) rotateY(0);
+  filter: blur(0);
+}
+
+/* Starting positions */
+.service-card:nth-child(odd) {
+  transform: translateX(-100px) rotateY(20deg);
+}
+.service-card:nth-child(even) {
+  transform: translateX(100px) rotateY(-20deg);
+}
